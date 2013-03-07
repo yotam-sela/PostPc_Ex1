@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class TipCalculatorActivity extends Activity {
 
 	private static final double TIP_PERCENTAGE = 1; 
+	private static final String TIP_RESULT_STRUCTURE = "Tip :$";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +42,20 @@ public class TipCalculatorActivity extends Activity {
 						{
 							roundNum++;
 						}
-						tipResText.setText("Tip:$"+roundNum); 
+						tipResText.setText(TIP_RESULT_STRUCTURE+roundNum); 
 					}
 					else
 					{
 						if(num == (double)roundNum)
 						{
-							tipResText.setText("Tip:$"+num);
+							tipResText.setText(TIP_RESULT_STRUCTURE+num);
 						}
 						else{
-							tipResText.setText("Tip:$"+roundNum);
+							tipResText.setText(TIP_RESULT_STRUCTURE+roundNum);
 						}
 					}
 				}else{
-					tipResText.setText("Tip:$"+editBill);
+					tipResText.setText("Tip :$"+editBill);
 				}
 
 			}
