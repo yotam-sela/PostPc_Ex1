@@ -1,5 +1,7 @@
 package il.ac.huji.tipcalculator;
 
+import java.text.DecimalFormat;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -14,6 +16,7 @@ public class TipCalculatorActivity extends Activity {
 
 	private static final double TIP_PERCENTAGE = 0.12; 
 	private static final String TIP_RESULT_STRUCTURE = "Tip :$";
+	private static final DecimalFormat df= new DecimalFormat("#0.00");
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,22 +40,16 @@ public class TipCalculatorActivity extends Activity {
 					int roundNum = (int)num;
 					if(roundCheckBox.isChecked())
 					{
-
 						if((Math.ceil(num) - num < 0.5) && (Math.ceil(num) - num > 0))
 						{
 							roundNum++;
 						}
-						tipResText.setText(TIP_RESULT_STRUCTURE+roundNum); 
+						tipResText.setText(TIP_RESULT_STRUCTURE+(double)roundNum); 
 					}
 					else
 					{
-						if(num == (double)roundNum)
-						{
-							tipResText.setText(TIP_RESULT_STRUCTURE+num);
-						}
-						else{
-							tipResText.setText(TIP_RESULT_STRUCTURE+roundNum);
-						}
+						String numDecimalFormat= df.format(num);  
+						tipResText.setText(TIP_RESULT_STRUCTURE+Double.parseDouble(numDecimalFormat));
 					}
 				}else{
 					tipResText.setText("Tip :$"+editBill);
