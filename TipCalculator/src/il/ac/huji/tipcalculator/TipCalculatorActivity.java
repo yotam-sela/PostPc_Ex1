@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class TipCalculatorActivity extends Activity {
 
-	private static final double TIP_PERCENTAGE = 1; 
+	private static final double TIP_PERCENTAGE = 0.12; 
 	private static final String TIP_RESULT_STRUCTURE = "Tip :$";
 
 	@Override
@@ -57,7 +57,6 @@ public class TipCalculatorActivity extends Activity {
 				}else{
 					tipResText.setText("Tip :$"+editBill);
 				}
-
 			}
 		});
 	}
