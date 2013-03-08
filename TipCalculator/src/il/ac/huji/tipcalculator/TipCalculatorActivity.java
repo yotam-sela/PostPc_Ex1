@@ -52,7 +52,7 @@ public class TipCalculatorActivity extends Activity {
 						tipResText.setText(TIP_RESULT_STRUCTURE+Double.parseDouble(numDecimalFormat));
 					}
 				}else{
-					tipResText.setText("Tip :$"+editBill);
+					tipResText.setText(TIP_RESULT_STRUCTURE+editBill);
 				}
 			}
 		});
