@@ -44,12 +44,12 @@ public class TipCalculatorActivity extends Activity {
 						{
 							roundNum++;
 						}
-						tipResText.setText(TIP_RESULT_STRUCTURE+(double)roundNum); 
+						tipResText.setText(TIP_RESULT_STRUCTURE+roundNum); 
 					}
 					else
 					{
 						String numDecimalFormat= df.format(num);  
-						tipResText.setText(TIP_RESULT_STRUCTURE+Double.parseDouble(numDecimalFormat));
+						tipResText.setText(TIP_RESULT_STRUCTURE+numDecimalFormat);
 					}
 				}else{
 					tipResText.setText(TIP_RESULT_STRUCTURE+editBill);
